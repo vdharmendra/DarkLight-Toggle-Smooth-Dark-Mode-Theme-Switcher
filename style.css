@@ -1,0 +1,67 @@
+/* RESET DEFAULT CSS */
+*{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+/* PAGE CSS */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  transition: .4s;
+}
+/* TOGGEL BUTTON */
+.toggle-button {
+  visibility: hidden;
+}
+
+.label {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 34px;
+  background-color: white;
+  height: 34px;
+  border-radius: 50%;
+  top: 3px;
+  position: absolute;
+  left: 3px;
+  animation: toggleOff 0.4s linear forwards;
+}
+
+.toggle-button:checked + .label {
+  background-color: white;
+}
+
+.toggle-button:checked + .label .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: #292222;
+}
+/* ANIMATION KEYFRAMES */
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
